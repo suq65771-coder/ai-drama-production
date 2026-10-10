@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title><!--ADP_TITLE--> · AI漫剧制作包</title></head>
+<body style="margin:0;background:#111517">
+<!-- AI_DRAMA_PACKAGE_START -->
+<style>
+.adp{font:16px/1.7 system-ui,"Microsoft YaHei",sans-serif;color:#e9edf0;background:#111517;max-width:1440px;margin:auto;padding:24px;--muted:#aab6bd;--accent:#f3c879}.adp *{box-sizing:border-box}.adp a{color:var(--accent)}.adp h1{font-size:clamp(26px,4vw,40px);margin:0}.adp h2{margin:0 0 12px}.adp h3{margin:24px 0 10px}.adp .adp-meta,.adp small{color:var(--muted)}.adp .adp-note{background:#29312e;border-left:3px solid var(--accent);padding:12px 16px}.adp nav{display:flex;flex-wrap:wrap;gap:8px;position:sticky;top:0;background:#111517ef;padding:12px 0;z-index:3}.adp nav a{padding:4px 12px;background:#262e33;border-radius:6px;text-decoration:none}.adp section{scroll-margin-top:85px;background:#1b2226;border:1px solid #354047;border-radius:12px;margin:24px 0;padding:22px}.adp .adp-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.adp figure{margin:0;min-width:0;background:#111719;padding:10px;border-radius:8px}.adp img{width:100%;max-height:420px;object-fit:contain;background:#20292e;border-radius:5px}.adp figcaption{font-size:14px;margin-top:10px;overflow-wrap:anywhere}.adp .adp-table{overflow:auto}.adp table{border-collapse:collapse;width:100%;min-width:520px}.adp td,.adp th{border:1px solid #40505a;padding:10px;text-align:left;vertical-align:top}.adp textarea{width:100%;min-height:340px;max-height:650px;margin-top:12px;background:#101719;color:#e9edf0;border:1px solid #46565f;border-radius:6px;padding:14px;font:14px/1.6 system-ui;resize:vertical}.adp button{background:var(--accent);color:#171b1d;border:0;border-radius:6px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer}.adp details{margin-top:12px}.adp .adp-status{display:inline-block;background:#313d43;color:#c9d4d9;border-radius:4px;padding:2px 8px;font-size:13px}.adp ul{padding-left:24px}.adp .adp-dialogue li{margin:8px 0}.adp .adp-end{color:#c6d2d8}@media(max-width:600px){.adp{padding:14px}.adp section{padding:14px}.adp .adp-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.adp figure{padding:7px}.adp h2{font-size:21px}}
+</style>
+<main class="adp" id="ai-drama-production-package">
+<header><small>AI漫剧制作总控 · 独立生成图文包</small><h1><!--ADP_TITLE--></h1><p class="adp-meta"><!--ADP_META--></p></header>
+<p class="adp-note">按每段图号上传参考图，再复制该段完整提示词。文件与时间轴已做机械检查；图片内容、剧情表达、实际口型和声纹仍需分别核验。</p>
+<!--ADP_WARNINGS-->
+<nav aria-label="片段导航"><!--ADP_NAV--></nav>
+<!--ADP_BODY-->
+</main>
+<script>
+document.querySelectorAll('.adp button[data-copy-target]').forEach(function(button){
+  button.addEventListener('click',async function(){
+    const area=document.getElementById(button.dataset.copyTarget);const original=button.textContent;let copied=false;
+    try{if(navigator.clipboard){await navigator.clipboard.writeText(area.value);copied=true;}}catch(error){}
+    if(!copied){area.focus();area.select();try{copied=document.execCommand('copy');}catch(error){}}
+    button.textContent=copied?'已复制':'已选中，请按Ctrl+C';setTimeout(function(){button.textContent=original;},1800);
+  });
+});
+</script>
+<!-- AI_DRAMA_PACKAGE_END -->
+</body></html>
